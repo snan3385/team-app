@@ -1,32 +1,26 @@
-import TeamOnboarding from "./pages/TeamOnboarding";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Sidebar from "./components/Sidebar";
-// import RequestOnboarding from "./pages/RequestOnboarding";
-
+import TeamOnboarding from "./pages/ViewOnboarding/TeamOnboarding";
 import React from "react";
 
-// import { Route, BrowserRouter, Routes, Navigate } from "react-router-dom";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
+  Outlet,
 } from "react-router-dom";
 
 import { PublicClientApplication } from "@azure/msal-browser";
 import { MsalProvider } from "@azure/msal-react";
-import { msalConfig } from "./views/SignIn/authConfig";
+import { msalConfig } from "./pages/SignIn/authConfig";
 
-// importing the layouts and views
-// import Admin from "./layouts/Admin";
-import SignIn from "./views/SignIn/SignIn";
+import SignIn from "./pages/SignIn/SignIn";
 
-// importing the admin portal routes
 import * as routes from "./constants/routes";
-import Sidebar from "./components/Sidebar";
-import RequestOnboarding from "./pages/RequestOnboarding";
-
-// import { Navigate } from "react-router-dom";
+import Sidebar from "./pages/Sidebar/Sidebar";
+import RequestOnboarding from "./pages/RequestOnboarding/RequestOnboarding";
+import ProdRequestOnboarding from "./pages/RequestOnboarding/ProdRequestOnboarding";
+import RequestOnboardingAll from "./pages/RequestOnboarding/RequestOnboardinAll";
+import EditableTeam from "./pages/Team/EditableTeam";
+import AllUsers from "./pages/User/AllUsers";
 
 /**
  * Initialize a PublicClientApplication instance which is provided to the MsalProvider component
@@ -34,67 +28,72 @@ import RequestOnboarding from "./pages/RequestOnboarding";
  */
 const msalInstance = new PublicClientApplication(msalConfig);
 
+const SidebarLayout = () => (
+  <>
+    <Sidebar />
+    <Outlet />
+  </>
+);
+
 export default function Root(props) {
   return (
-    // <Router>
-    //   {/*<Provider store={store}>*/}
-    //   {/*  <AppSidebar />*/}
-    //   {/*</Provider>*/}
-    //   {/*<section>{props.name} is mounted!</section>*/}
-    //   <Sidebar />
-    //   {/*<TeamOnboarding />*/}
-    //   <Routes>
-    //     <Route
-    //       path="/event-platform-resource-management/onboarding/view-onboarding"
-    //       exact
-    //       element={<TeamOnboarding />}
-    //     />
-    //     <Route
-    //       path="/event-platform-resource-management/"
-    //       exact
-    //       element={<TeamOnboarding />}
-    //     />
-    //     <Route
-    //       path="/event-platform-resource-management/onboarding/request-onboarding"
-    //       exact
-    //       element={<RequestOnboarding />}
-    //     />
-    //   </Routes>
-    // </Router>
-
     <React.StrictMode>
       <MsalProvider instance={msalInstance}>
-        {/*<BrowserRouter>*/}
         <Router>
-          {/*<Switch>*/}
           <Routes>
-            <Route path={routes.SIGNIN} exact element={<SignIn />} />
-            {/*<Route path={routes.ADMIN} component={Admin} />*/}
-            {/*<Redirect from={routes.AUTH} to={routes.ADMIN} />*/}
-            {/*<Redirect*/}
-            {/*  exact*/}
-            {/*  from="/event-platform-resource-management/"*/}
-            {/*  to={routes.SIGNIN}*/}
-            {/*/>*/}
             <Route
-              path="/event-platform-resource-management/"
+              path={routes.ONBOARDING}
+              exact
+              element={<SidebarLayout />}
+            >
+              <Route index element={<TeamOnboarding />} />
+              <Route
+                path={routes.VIEWONBOARDING}
+                exact
+                element={<TeamOnboarding />}
+              ></Route>
+              <Route
+                path={routes.REQUESTONBOARDING}
+                exact
+                element={<RequestOnboardingAll />}
+              >
+                <Route index element={<RequestOnboarding />} />
+                <Route
+                  path={routes.PRODREQUESTONBOARDING}
+                  exact
+                  element={<ProdRequestOnboarding />}
+                ></Route>
+                <Route
+                  path={routes.NONPRODREQUESTONBOARDING}
+                  exact
+                  element={<RequestOnboarding />}
+                ></Route>
+              </Route>
+            </Route>
+            <Route
+              path={routes.USERTEAMMANAGEMENT}
+              exact
+              element={<SidebarLayout />}
+            >
+              <Route index element={<EditableTeam />} />
+              <Route
+                path={routes.TEAMMANAGEMENT}
+                exact
+                element={<EditableTeam />}
+              ></Route>
+              <Route
+                path={routes.USERMANAGEMENT}
+                exact
+                element={<AllUsers />}
+              ></Route>
+            </Route>
+            <Route path={routes.SIGNIN} exact element={<SignIn />} />
+            <Route
+              path={routes.MANAGEMENT}
               exact
               element={<SignIn />}
             ></Route>
-            <Route
-              path="/event-platform-resource-management/onboarding/view-onboarding"
-              exact
-              element={<TeamOnboarding />}
-            />
-            <Route
-              path="/event-platform-resource-management/onboarding/request-onboarding"
-              exact
-              element={<RequestOnboarding />}
-            />
-            {/*} />*/}
-            {/*</Switch>*/}
           </Routes>
-          {/*</BrowserRouter>*/}
         </Router>
       </MsalProvider>
     </React.StrictMode>

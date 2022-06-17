@@ -1,0 +1,21 @@
+.all-div-prod {
+    margin-left: 350px;
+    margin-right: 100px;
+    z-index: -100;
+}
+.root-prod {
+    margin-left: 200px;
+    margin-top: -50px;
+
+}
+
+.display-form {
+    margin-left: 80px;
+    width:700px;
+    margin-right: 500px;
+    margin-top: -50px;
+}
+
+.close {
+    margin-left: 500px;
+}
