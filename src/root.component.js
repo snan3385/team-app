@@ -41,11 +41,7 @@ export default function Root(props) {
       <MsalProvider instance={msalInstance}>
         <Router>
           <Routes>
-            <Route
-              path={routes.ONBOARDING}
-              exact
-              element={<SidebarLayout />}
-            >
+            <Route path={routes.ONBOARDING} exact element={<SidebarLayout />}>
               <Route index element={<TeamOnboarding />} />
               <Route
                 path={routes.VIEWONBOARDING}
@@ -88,11 +84,7 @@ export default function Root(props) {
               ></Route>
             </Route>
             <Route path={routes.SIGNIN} exact element={<SignIn />} />
-            <Route
-              path={routes.MANAGEMENT}
-              exact
-              element={<SignIn />}
-            ></Route>
+            <Route path={routes.MANAGEMENT} exact element={<SignIn />}></Route>
           </Routes>
         </Router>
       </MsalProvider>

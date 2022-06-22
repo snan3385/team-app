@@ -14,7 +14,6 @@
   background-image: url("../../assets/img/login.jpeg");
 }
 
-
 .marquee {
   width: 270px;
   line-height: 48px;
@@ -28,7 +27,7 @@
   width: 270px;
 }
 
-.text{
+.text {
   color: #ffffff;
   width: 270px;
   justify-content: center;
@@ -38,6 +37,6 @@
   margin-bottom: 20px;
 }
 
-.topBar{
+.topBar {
   justify-content: center;
 }

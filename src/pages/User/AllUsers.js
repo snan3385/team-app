@@ -4,23 +4,11 @@ import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 
 import {
-  FormLabel,
   FormControl,
-  FormControlLabel,
-  FormGroup,
-  Checkbox,
   Typography,
-  Button,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  ListItemSecondaryAction,
   IconButton,
-  Icon,
-  Dialog,
   TablePagination,
   Grid,
-  Card,
 } from "@material-ui/core";
 
 import "./AllUser.css";
@@ -37,6 +25,9 @@ import CloseIcon from "@material-ui/icons/Close";
 import AddIcon from "@material-ui/icons/Add";
 
 import AddUser from "./AddUser";
+
+import CustomCard from "../../components/CustomCard/Card";
+import CustomCardHeader from "../../components/CustomCard/CardHeader";
 
 const useStyles = makeStyles({
   table: {
@@ -209,79 +200,87 @@ export default function AllUsers() {
           </Box>
         </Box>
 
-        <Grid item xs={8} sm={8} md={8}>
-          {showAddUserForm ? (
-            <AddUser
-              handleCloseAddUserForm={() => handleCloseAddUserForm()}
-              onSubmit={addUser}
-            />
-          ) : null}
-        </Grid>
-        <Grid item xs={8} sm={8} md={8}>
-          {showForm ? (
-            <div className="display-form">
-              <Grid container>
-                <Grid item xs={12} sm={12} md={12}>
-                  <Card className="root">
-                    <IconButton
-                      style={{
-                        marginLeft: "520px",
-                        marginTop: "0px",
-                        marginRight: "0px",
-                      }}
-                      className="close"
-                      onClick={() => {
-                        handleCloseClick();
-                      }}
-                    >
-                      <CloseIcon />
-                    </IconButton>
-                    <Box>
-                      <Typography variant="h6">
-                        <div style={{ padding: "0.4em 0" }}>
-                          User Information
-                        </div>
-                      </Typography>
-                      <FormControl className="input-team-type"></FormControl>
-                      <Grid container>
-                        <Grid item xs={4}>
-                          <div>Name</div>
-                        </Grid>
-                        <Grid item xs={8}>
-                          <TextField value={name} />
-                        </Grid>
+        {/*<Grid item xs={8} sm={8} md={8}>*/}
+        {showAddUserForm ? (
+          <AddUser
+            handleCloseAddUserForm={() => handleCloseAddUserForm()}
+            onSubmit={addUser}
+          />
+        ) : null}
+        {/*</Grid>*/}
+        {/*<Grid item xs={8} sm={8} md={8}>*/}
+        {showForm ? (
+          <div className="display-form">
+            <Grid container>
+              <Grid item xs={12} sm={12} md={12}>
+                <CustomCard className="root-all-user">
+                  <CustomCardHeader className="card-header-all-user">
+                    <Grid container>
+                      <Grid item xs={6}>
+                        <Typography variant="h6">
+                          <div style={{ padding: "0.4em 0" }}>
+                            User Information
+                          </div>
+                        </Typography>
                       </Grid>
-                      <Grid container>
-                        <Grid item xs={4}>
-                          <div>Email</div>
-                        </Grid>
-                        <Grid item xs={8}>
-                          <TextField value={email} />
-                        </Grid>
+                      <Grid item xs={6}>
+                        <IconButton
+                          // style={{
+                          //   marginLeft: "520px",
+                          //   marginTop: "0px",
+                          //   marginRight: "0px",
+                          // }}
+                          className="close-user"
+                          onClick={() => {
+                            handleCloseClick();
+                          }}
+                        >
+                          <CloseIcon />
+                        </IconButton>
                       </Grid>
-                      <Grid container>
-                        <Grid item xs={4}>
-                          <div>Sysco ID</div>
-                        </Grid>
-                        <Grid item xs={8}>
-                          <TextField value={syscoId} />
-                        </Grid>
+                    </Grid>
+                  </CustomCardHeader>
+                  <Box>
+                    <FormControl className="input-team-type"></FormControl>
+                    <Grid container>
+                      <Grid item xs={4}>
+                        <div>Name</div>
                       </Grid>
-                      <Grid container>
-                        <Grid item xs={4}>
-                          <div>Last Modified Date</div>
-                        </Grid>
-                        <Grid item xs={8}>
-                          <TextField value={lastModDate} />
-                        </Grid>
+                      <Grid item xs={8}>
+                        <TextField value={name} />
                       </Grid>
-                    </Box>
-                  </Card>
-                </Grid>
+                    </Grid>
+                    <Grid container>
+                      <Grid item xs={4}>
+                        <div>Email</div>
+                      </Grid>
+                      <Grid item xs={8}>
+                        <TextField value={email} />
+                      </Grid>
+                    </Grid>
+                    <Grid container>
+                      <Grid item xs={4}>
+                        <div>Sysco ID</div>
+                      </Grid>
+                      <Grid item xs={8}>
+                        <TextField value={syscoId} />
+                      </Grid>
+                    </Grid>
+                    <Grid container>
+                      <Grid item xs={4}>
+                        <div>Last Modified Date</div>
+                      </Grid>
+                      <Grid item xs={8}>
+                        <TextField value={lastModDate} />
+                      </Grid>
+                    </Grid>
+                  </Box>
+                </CustomCard>
               </Grid>
-            </div>
-          ) : null}
-        </Grid>
+            </Grid>
+          </div>
+        ) : null}
+        {/*</Grid>*/}
       </Paper>
     </>
   );

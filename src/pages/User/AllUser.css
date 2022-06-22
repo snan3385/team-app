@@ -1,21 +1,24 @@
 .all-div {
-    margin-left: 550px;
-    margin-right: 300px;
-    z-index: -100;
+  margin-left: 450px;
+  margin-right: 300px;
+  z-index: -100;
 }
-.root {
-    margin-left: 200px;
-    margin-top: -50px;
-
+.root-all-user {
+  margin-left: 200px;
+  margin-top: -50px;
 }
 
 .display-form {
-    margin-left: 10px;
-    width:600px;
-    margin-right: 500px;
-    margin-top: -50px;
+  margin-left: 10px;
+  width: 600px;
+  margin-right: 500px;
+  margin-top: -50px;
 }
 
-.close {
-    margin-left: 500px;
+.close-user {
+  margin-left: 1000px;
+}
+
+.card-header-all-user{
+  margin-left: 0px;
 }

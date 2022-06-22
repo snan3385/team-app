@@ -228,7 +228,8 @@ export default function EditableTeam() {
         onChangeRowsPerPage={handleChangeRowsPerPage}
       />
       <div>
-        <Modal className={classes.modal}
+        <Modal
+          className={classes.modal}
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
           open={open}

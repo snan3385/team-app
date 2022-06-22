@@ -3,12 +3,15 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 
-import { Typography, Button, IconButton, Grid, Card } from "@material-ui/core";
+import { Typography, Button, IconButton, Grid } from "@material-ui/core";
 
 import "./AddUser.css";
 import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 import CloseIcon from "@material-ui/icons/Close";
+
+import CustomCard from "../../components/CustomCard/Card";
+import CustomCardHeader from "../../components/CustomCard/CardHeader";
 
 const useStyles = makeStyles({
   table: {
@@ -41,10 +44,6 @@ const originalRows = [
 ];
 
 export default function AddUser(props) {
-
-  const [rows, setRows] = useState(originalRows);
-  const [showForm, setShowForm] = useState(false);
-  const [showAddUserForm, setShowAddUserForm] = useState(false);
   const [newName, setNewName] = useState("");
   const [newSyscoId, setNewSyscoId] = useState("");
   const [newEmail, setNewEmail] = useState("");
@@ -53,82 +52,92 @@ export default function AddUser(props) {
   const classes = useStyles();
   return (
     <>
-      <Paper style={{ marginRight: "25px" }} elevation={0}>
-        <div>
-          <Card className="root">
-            <IconButton
-              style={{
-                marginLeft: "500px",
-                marginTop: "0px",
-                marginRight: "10px",
-              }}
-              className="close"
-              onClick={() => props.handleCloseAddUserForm(false)}
-            >
-              <CloseIcon />
-            </IconButton>
-            <Box className="content">
+      {/*<Paper style={{ marginRight: "25px" }} elevation={0}>*/}
+      {/*  <div>*/}
+      {/*<Card className="root">*/}
+      <CustomCard className="card-add-user">
+        <CustomCardHeader className="card-header-add-user">
+          <Grid container>
+            <Grid item xs={6}>
               <Typography variant="h6">
                 <div style={{ marginBottom: "20px" }}>User Information</div>
               </Typography>
-              <Grid>
-                <Grid>
-                  <TextField
-                    InputProps={{ style: { fontSize: 15 } }}
-                    InputLabelProps={{ style: { fontSize: 15 } }}
-                    label="Team Name"
-                    value={newName}
-                    onChange={(e) => setNewName(e.target.value)}
-                  />
-                </Grid>
-              </Grid>
-              <Grid>
-                <Grid item xs={8}>
-                  <TextField
-                    InputProps={{ style: { fontSize: 15 } }}
-                    InputLabelProps={{ style: { fontSize: 15 } }}
-                    label="Sysco ID"
-                    value={newSyscoId}
-                    onChange={(e) => setNewSyscoId(e.target.value)}
-                  />
-                </Grid>
-              </Grid>
-              <Grid container>
-                <Grid item xs={8}>
-                  <TextField
-                    InputProps={{ style: { fontSize: 15 } }}
-                    InputLabelProps={{ style: { fontSize: 15 } }}
-                    label="Email"
-                    value={newEmail}
-                    onChange={(e) => setNewEmail(e.target.value)}
-                  />
-                </Grid>
-              </Grid>
-              <Grid container>
-                <Grid item xs={8}>
-                  <TextField
-                    InputProps={{ style: { fontSize: 15 } }}
-                    InputLabelProps={{ style: { fontSize: 15 } }}
-                    label="Description"
-                    value={newDescription}
-                    onChange={(e) => setNewDescription(e.target.value)}
-                  />
-                </Grid>
-              </Grid>
-            </Box>
-            <Box className="button">
-              <Button
-                variant="contained"
-                color="default"
-                // onClick={addUser}
-                onClick={() => props.onSubmit(newName, newSyscoId, newEmail)}
+            </Grid>
+            <Grid item xs={6}>
+              <IconButton
+                // className="icon-button"
+                // style={{
+                //   marginLeft: "500px",
+                //   marginTop: "0px",
+                //   marginRight: "10px",
+                // }}
+                className="close-add-user"
+                onClick={() => props.handleCloseAddUserForm(false)}
               >
-                Add User
-              </Button>
-            </Box>
-          </Card>
-        </div>
-      </Paper>
+                <CloseIcon />
+              </IconButton>
+            </Grid>
+          </Grid>
+        </CustomCardHeader>
+        <Box className="content">
+          <Grid>
+            <Grid>
+              <TextField
+                InputProps={{ style: { fontSize: 15 } }}
+                InputLabelProps={{ style: { fontSize: 15 } }}
+                label="Team Name"
+                value={newName}
+                onChange={(e) => setNewName(e.target.value)}
+              />
+            </Grid>
+          </Grid>
+          <Grid>
+            <Grid item xs={8}>
+              <TextField
+                InputProps={{ style: { fontSize: 15 } }}
+                InputLabelProps={{ style: { fontSize: 15 } }}
+                label="Sysco ID"
+                value={newSyscoId}
+                onChange={(e) => setNewSyscoId(e.target.value)}
+              />
+            </Grid>
+          </Grid>
+          <Grid container>
+            <Grid item xs={8}>
+              <TextField
+                InputProps={{ style: { fontSize: 15 } }}
+                InputLabelProps={{ style: { fontSize: 15 } }}
+                label="Email"
+                value={newEmail}
+                onChange={(e) => setNewEmail(e.target.value)}
+              />
+            </Grid>
+          </Grid>
+          <Grid container>
+            <Grid item xs={8}>
+              <TextField
+                InputProps={{ style: { fontSize: 15 } }}
+                InputLabelProps={{ style: { fontSize: 15 } }}
+                label="Description"
+                value={newDescription}
+                onChange={(e) => setNewDescription(e.target.value)}
+              />
+            </Grid>
+          </Grid>
+        </Box>
+        <Box className="button">
+          <Button
+            variant="contained"
+            color="default"
+            // onClick={addUser}
+            onClick={() => props.onSubmit(newName, newSyscoId, newEmail)}
+          >
+            Add User
+          </Button>
+        </Box>
+      </CustomCard>
+      {/*</div>*/}
+      {/*</Paper>*/}
     </>
   );
 }

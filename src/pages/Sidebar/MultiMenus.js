@@ -46,6 +46,7 @@ const MultiMenus = ({ menus }) => {
   const [activeMenus, setActiveMenus] = useState([]);
 
   const handleMenuClick = (data) => {
+    // eslint-disable-next-line no-console
     console.log(data);
     // eslint-disable-next-line no-console
     data.path
