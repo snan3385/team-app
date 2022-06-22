@@ -1,3 +1,5 @@
+import { blueColor } from "../../material-dashboard-react";
+
 const cardHeaderStyle = {
   cardHeader: {
     padding: "0.75em 0.75",
@@ -6,6 +8,7 @@ const cardHeaderStyle = {
     background: "transparent",
     zIndex: "3 !important",
     fontSize: "30px",
+    width: "auto",
   },
   cardHeaderPlain: {
     marginLeft: "0px !important",

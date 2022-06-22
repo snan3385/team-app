@@ -2,13 +2,13 @@ import { blackColor, whiteColor } from "../../material-dashboard-react";
 
 const cardStyle = {
   card: {
-    border: "0",
+    // border: "0",
     marginBottom: "30px",
     marginTop: "40px",
     borderRadius: "6px",
     color: blackColor,
     background: whiteColor,
-    width: "100%",
+    width: "50%",
     boxShadow: "none",
     position: "relative",
     display: "flex",
@@ -16,6 +16,7 @@ const cardStyle = {
     minWidth: "0",
     wordWrap: "break-word",
     fontSize: ".875rem",
+    // border: "thick solid #0000FF",
   },
   cardPlain: {
     background: "transparent",

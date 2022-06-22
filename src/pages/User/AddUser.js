@@ -58,12 +58,12 @@ export default function AddUser(props) {
       <CustomCard className="card-add-user">
         <CustomCardHeader className="card-header-add-user">
           <Grid container>
-            <Grid item xs={6}>
+            <Grid item xs={11}>
               <Typography variant="h6">
                 <div style={{ marginBottom: "20px" }}>User Information</div>
               </Typography>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={1}>
               <IconButton
                 // className="icon-button"
                 // style={{

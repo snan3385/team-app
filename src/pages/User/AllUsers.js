@@ -216,14 +216,14 @@ export default function AllUsers() {
                 <CustomCard className="root-all-user">
                   <CustomCardHeader className="card-header-all-user">
                     <Grid container>
-                      <Grid item xs={6}>
+                      <Grid item xs={11}>
                         <Typography variant="h6">
                           <div style={{ padding: "0.4em 0" }}>
                             User Information
                           </div>
                         </Typography>
                       </Grid>
-                      <Grid item xs={6}>
+                      <Grid item xs={1}>
                         <IconButton
                           // style={{
                           //   marginLeft: "520px",

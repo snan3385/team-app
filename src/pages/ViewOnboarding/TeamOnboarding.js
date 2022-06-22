@@ -65,7 +65,7 @@ export default function TeamOnboarding() {
     headers: {
       // Authorization: "Bearer KXJwrw3JlKDhlPArZALZmrPZ97ju",
       // "Access-Control-Allow-Credentials": "true",
-      Authorization: `Bearer GlRsUqeqr4tEWwCBh02Gn8wpgWWF`,
+      Authorization: `Bearer ytWd4EADCmP53tmnuGB7L188LuhV`,
     },
   });
 
