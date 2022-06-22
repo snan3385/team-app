@@ -35,7 +35,11 @@ export default function ProdRequestOnboarding() {
 
   return (
     <>
-      <CustomTable originalRows={originalRows} tableHeaders={tableHeaders} />
+      <CustomTable
+        originalRows={originalRows}
+        tableHeaders={tableHeaders}
+        tableHeaderColor="info"
+      />
     </>
   );
 }

@@ -83,7 +83,11 @@ export default function TeamOnboarding() {
 
   return (
     <>
-      <CustomTable originalRows={originalRows} tableHeaders={tableHeaders} />
+      <CustomTable
+        originalRows={originalRows}
+        tableHeaders={tableHeaders}
+        tableHeaderColor="info"
+      />
       <div style={{ marginLeft: "400px" }}>
         <button onClick={getTeams}>check</button>
         <div>counter : {counter}</div>
