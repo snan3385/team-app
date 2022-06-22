@@ -1,0 +1,26 @@
+.all-div-non-prod {
+  margin-left: 300px;
+  margin-right: 300px;
+  /*z-index: -100;*/
+  margin-top: 110px;
+  width: 500px;
+}
+.root-non-prod {
+  margin-left: 300px;
+  margin-right: 200px;
+  width: 1000px;
+}
+
+.body {
+  width: 1000px;
+  height: 600px;
+  margin-left: 50px;
+}
+
+.card-header-add-team {
+  margin-left: 300px;
+}
+
+.card-add-team {
+  margin-left: 450px;
+}
