@@ -191,55 +191,11 @@
 // export default Sidebar;
 
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-import { Link, Routes, Route } from "react-router-dom";
-import * as AiIcons from "react-icons/ai";
 import { IconContext } from "react-icons/lib";
 
 import "./SidebarStyle.css";
-
-import { Menu, MenuItem, MenuList, Grid } from "@material-ui/core";
-import Setting from "@material-ui/icons/Settings";
-import Support from "@material-ui/icons/Help";
-import Person from "@material-ui/icons/Person";
-import Box from "@material-ui/core/Box";
-
-import MultiMenus from "./MultiMenus";
 import SidebarNav from "../../components/CustomSideBar/SidebarNav";
 import Profile from "../../components/CustomSideBar/Profile";
-
-// const NavIcon = styled(Link)`
-//   margin-left: 2rem;
-//   font-size: 2rem;
-//   height: 80px;
-//   display: flex;
-//   justify-content: flex-start;
-//   align-items: center;
-// `;
-
-// const SidebarNav = styled.nav`
-//   // background: #15171c;
-//   // background: #19004d;
-//   // background: #bfe6cc;
-//   //   background: #8099b2;
-//   background: #a8a8a8;
-//   width: 270px;
-//   height: 100vh;
-//   display: flex;
-//   justify-content: center;
-//   position: fixed;
-//   top: 0;
-//   left: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
-//   transition: 350ms;
-//   z-index: 10;
-//   margin-top: 0px;
-//   // margin-top: 88px;
-// `;
-
-// const SidebarWrap = styled.div`
-//   width: 100%;
-//   margin-top: 0px;
-// `;
 
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState(true);

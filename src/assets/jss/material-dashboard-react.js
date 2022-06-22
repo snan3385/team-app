@@ -34,7 +34,7 @@ const grayColor = [
   "#a9afbb",
   "#eee",
   "#e7e7e7",
-  "#a8a8a8"
+  "#a8a8a8",
 ];
 
 export {
