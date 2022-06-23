@@ -6,6 +6,7 @@ import { increment, decrement } from "../../data/actions";
 
 import axios from "axios";
 import CustomTable from "../../components/CustomTables/CustomTable";
+import Button from "@material-ui/core/Button";
 
 const componentOriginalRows = [
   {
@@ -61,11 +62,11 @@ export default function TeamOnboarding() {
   const dispatch = useDispatch();
 
   const api = axios.create({
-    baseURL: `https://api-gateway-sbx.sysco.com/event-platform-team-onboarding-api/`,
+    baseURL: `https://api-gateway-bff-sbx.sysco.com/event-platform-team-onboarding-api/onboard/teams?status=0`,
     headers: {
       // Authorization: "Bearer KXJwrw3JlKDhlPArZALZmrPZ97ju",
       // "Access-Control-Allow-Credentials": "true",
-      Authorization: `Bearer ytWd4EADCmP53tmnuGB7L188LuhV`,
+      Authorization: `Bearer 6Rhu0tbpFkujGVCe2hsg4GbchdYW`,
     },
   });
 
@@ -89,11 +90,19 @@ export default function TeamOnboarding() {
         tableHeaderColor="info"
       />
       <div style={{ marginLeft: "400px" }}>
-        <button onClick={getTeams}>check</button>
-        <div>counter : {counter}</div>
-        <button onClick={() => dispatch(increment(5))}>+</button>
-        <button onClick={() => dispatch(decrement())}>-</button>
-        <div>logged : {isLogged.toString()}</div>
+        <button className="btn-gradient" onClick={getTeams}>
+          check
+        </button>
+        {/*<div>counter : {counter}</div>*/}
+        {/*<button onClick={() => dispatch(increment(5))}>+</button>*/}
+        {/*<button onClick={() => dispatch(decrement())}>-</button>*/}
+        {/*<div>logged : {isLogged.toString()}</div>*/}
+        <Button variant="contained" color="primary" className="m-2">
+          <span className="btn-wrapper--icon">
+            {/*<FontAwesomeIcon icon={["far", "lightbulb"]} />*/}
+          </span>
+          <span className="btn-wrapper--label">Left icon</span>
+        </Button>
       </div>
     </>
   );

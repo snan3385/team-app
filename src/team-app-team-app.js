@@ -6,7 +6,10 @@ import { createStore } from "redux";
 import allReducers from "./data/reducers";
 import { Provider } from "react-redux";
 
-export const store = createStore(allReducers);
+import configureStore from "./config/configureStore";
+
+// export const store = createStore(allReducers);
+const store = configureStore();
 
 const lifecycles = singleSpaReact({
   React,

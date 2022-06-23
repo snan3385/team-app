@@ -15,12 +15,14 @@ import { msalConfig } from "./pages/SignIn/authConfig";
 import SignIn from "./pages/SignIn/SignIn";
 
 import * as routes from "./constants/routes";
-import Sidebar from "./pages/Sidebar/Sidebar";
+// import Sidebar from "./pages/Sidebar/Sidebar";
 import RequestOnboarding from "./pages/RequestOnboarding/RequestOnboarding";
 import ProdRequestOnboarding from "./pages/RequestOnboarding/ProdRequestOnboarding";
 import RequestOnboardingAll from "./pages/RequestOnboarding/RequestOnboardinAll";
 import EditableTeam from "./pages/Team/EditableTeam";
 import AllUsers from "./pages/User/AllUsers";
+
+import Sidebar from "./pages/SidebarNew/Sidebar/index";
 
 /**
  * Initialize a PublicClientApplication instance which is provided to the MsalProvider component
