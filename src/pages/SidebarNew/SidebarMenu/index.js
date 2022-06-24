@@ -29,14 +29,14 @@ SidebarMenuList.propTypes = {
 
 const reduceChildRoutes = (props) => {
   // eslint-disable-next-line no-console
-  console.log(props.router);
+  console.log(props.router.pathname);
   const { router, items, page, depth } = props;
 
   if (page.content) {
-    const open = matchPath(router.location.pathname, {
-      path: page.to,
-      exact: false,
-    });
+    // const open = matchPath(router.location.pathname, {
+    //   path: page.to,
+    //   exact: false,
+    // });
 
     items.push(
       <SidebarMenuListItem

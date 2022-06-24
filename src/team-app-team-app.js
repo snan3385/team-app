@@ -11,6 +11,9 @@ import configureStore from "./config/configureStore";
 // export const store = createStore(allReducers);
 const store = configureStore();
 
+
+import {BrowserRouter as Router} from "react-router-dom";
+
 const lifecycles = singleSpaReact({
   React,
   ReactDOM,
@@ -19,7 +22,9 @@ const lifecycles = singleSpaReact({
     new Promise((resolve, reject) =>
       resolve(() => (
         <Provider store={store}>
-          <Root props={props} />
+          <Router basename="/event-platform-resource-management/">
+            <Root props={props} />
+          </Router>
         </Provider>
       ))
     ),

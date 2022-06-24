@@ -7,7 +7,7 @@ import { IconButton, Box, Tooltip } from "@material-ui/core";
 
 import { connect } from "react-redux";
 
-import projectLogo from "../../../assets/img/react.svg";
+// import projectLogo from "../../../assets/img/react.svg";
 
 import { setSidebarToggleMobile } from "../../../reducers/ThemeOptions";
 
@@ -37,7 +37,7 @@ const SidebarHeader = (props) => {
               <img
                 className="app-sidebar-logo"
                 alt="Carolina React Admin Dashboard with Material-UI Free"
-                src={projectLogo}
+                // src={projectLogo}
               />
             </IconButton>
           </Link>

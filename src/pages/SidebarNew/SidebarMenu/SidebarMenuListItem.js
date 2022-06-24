@@ -77,13 +77,13 @@ const SidebarMenuListItem = (props) => {
         disableGutters
       >
         <Button
-          activeClassName="active-item"
+          activeclassname="active-item"
           color="primary"
           disableRipple
           variant="text"
           className={clsx("app-sidebar-button-wrapper", `depth-${depth}`)}
           component={CustomRouterLink}
-          exact
+          exact="true"
           style={style}
           to={href}
         >
